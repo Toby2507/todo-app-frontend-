@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/5ca15c60cd.js" crossorigin="anonymous"></script>
+  <title>Frontend Mentor | Todo app</title>
+</head>
+<body class="font-josefin">
+  <main class="w-screen grid place-items-center">
+    <!-- Background -->
+    <section class="w-full min-h-screen grid grid-rows-[1fr_2fr]">
+      <div class="bg-mobileLight bg-norepeat bg-center bg-cover w-full dark:bg-mobileDark md:bg-deskLight dark:md:bg-deskDark"></div>
+      <div class="bg-lightBg dark:bg-darkBg"></div>
+    </section>
+    <!-- Interface -->
+    <section class="absolute top-20 mx-auto h-5/6 w-[90vw] md:w-[40rem]">
+      <div class="flex items-center justify-between mb-10">
+        <h1 class="text-3xl text-white uppercase font-bold tracking-[5px]">todo</h1>
+        <img src="images/icon-sun.svg" alt="sun" class="darkToggle cursor-pointer">
+      </div>
+      <!-- Create Todo Item -->
+      <form class="create-todo mb-6">
+        <div class="relative w-full h-14">
+          <input type="text" name="Todo Item" class=" todoitem h-full w-full bg-white rounded-md pl-16 text-lightTextDark caret-brightBlue placeholder:align-bottom placeholder:text-sm placeholder:text-lightTextLight dark:text-darkSecText dark:bg-darkSecBg dark:placeholder:text-darkFilterText" placeholder="Create a new todo..." autocomplete="off">
+          <button type="submit" class="absolute top-[0.9rem] left-6 w-6 h-6 border border-lightAccent rounded-full dark:border-darkAccent"></button>
+        </div>
+      </form>
+      <!-- Todo Items -->
+      <div class="interface">
+        <div class="flex flex-col bg-white rounded-md shadow-lg shadow-lightTextDark/20 dark:bg-darkSecBg dark:shadow-black/30">
+          <div class="h-1 w-full"></div>
+          <ul role="list" class="todo-box flex flex-col"></ul>
+          <!-- Action buttons + Filter Buttons Desktop -->
+          <div class="filterBox flex items-center justify-between px-5 py-4">
+            <h4 class="text-xs text-lightAccent dark:text-darkAccent"><span class="available">0</span> items left to do.</h4>
+            <div class="hidden items-center space-x-4 md:flex">
+              <button class="filter-btn active capitalize text-sm text-brightBlue font-bold" data-category="all">all</button>
+              <button class="filter-btn capitalize text-sm text-lightTextLight font-bold hover:text-lightTextDark dark:text-darkFilterText dark:hover:text-darkFilterHover" data-category="false">active</button>
+              <button class="filter-btn capitalize text-sm text-lightTextLight font-bold hover:text-lightTextDark dark:text-darkFilterText dark:hover:text-darkFilterHover" data-category="true">completed</button>
+            </div>
+            <button class="clear-completed text-sm text-lightAccent capitalize hover:text-lightTextLight dark:text-darkAccent dark:hover:text-darkFilterText">clear completed</button>
+          </div>
+        </div>
+        <!-- Filter Buttons Mobile -->
+        <div class="filterBox grid place-items-center bg-white rounded-md py-4 mt-6 shadow-lg shadow-lightTextDark/20 dark:bg-darkSecBg dark:shadow-black/30 md:hidden">
+          <div class="flex items-center space-x-4">
+            <button class="filter-btn active capitalize text-base text-brightBlue font-bold" data-category="all">all</button>
+            <button class="filter-btn capitalize text-base text-lightTextLight font-bold hover:text-lightTextDark dark:text-darkFilterText dark:hover:text-darkFilterHover" data-category="false">active</button>
+            <button class="filter-btn capitalize text-base text-lightTextLight font-bold hover:text-lightTextDark dark:text-darkFilterText dark:hover:text-darkFilterHover" data-category="true">completed</button>
+          </div>
+        </div>
+      </div>
+      <p class="text-xs text-lightTextLight text-center mt-8 dark:text-darkInfo">Drag and drop to reorder list (available on desktop only)</p>
+    </section>
+  </main>
+
+  <!-- JavaScript -->
+  <script src="scripts/app.js"></script>
+</body>
+</html>

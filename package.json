@@ -4,7 +4,7 @@
   "description": "![Design preview for the Todo app coding challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./input.css -o ./css/main.css",
+    "build": "CI= npx tailwindcss -i ./input.css -o ./css/main.css",
     "watch": "npx tailwindcss -i ./input.css -o ./css/main.css --watch"
   },
   "repository": {
